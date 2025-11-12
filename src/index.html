@@ -2,12 +2,83 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>eikon parcel starter</title>
+    <title>Château de sable</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="scss/main.scss" />
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div class="loading-page"></div>
+    <header>
+      <div class="header-nav">
+        <a
+          href="https://atrabile.org/catalogue/livres/chateau-de-sable-nouvelle-edition/"
+          >Les auteurs</a
+        ><a href="https://atrabile.org/">Éditions Atrabile</a>
+      </div>
+      <button class="header-button"><a href="">ACHETER LA BD</a></button>
+    </header>
+    <main>
+      <div class="hero-container">
+        <div class="hero">
+          <img src="img/crique-accueil.png?as=webp" class="hero-bg" />
+          <img src="img/crevasse.svg" class="hero-cave" />
+          <div class="hero-logo">CHÂTEAU<br />DE SABLE</div>
+        </div>
+      </div>
+
+      <div class="second-scene-container">
+        <div class="second-scene">
+          <p class="second-text">
+            Ils pensaient passer une bonne journée en famille à la plage...
+          </p>
+          <div class="second-parallax-item">
+            <img
+              src="img/pressez-vous/pressez-vous-troisieme-plan.webp"
+              alt=""
+              class="second-bg"
+            />
+            <img
+              src="img/pressez-vous/pressez-vous-deuxieme-plan.webp"
+              alt=""
+              class="second-family"
+            />
+            <img
+              src="img/pressez-vous/pressez-vous-premier-plan.webp"
+              alt=""
+              class="second-bg"
+            />
+            <img
+              src="img/pressez-vous/pressez-vous-bulle.webp"
+              alt=""
+              class="second-bubble"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="third-scene-container">
+        <div class="third-scene-parallax-item">
+          <img src="img/famille2/fond-famille2.webp" alt="" />
+          <img src="img/famille2/famille2.png" alt="" />
+          <img src="img/famille2/premier-plan-famille2.png" alt="" />
+        </div>
+      </div>
+
+      <!-- <div class="cover">
+        <div class="image">
+          <img src="./img/cover/cover1.png" class="cover1" />
+          <img src="./img/cover/cover2.png" class="cover2" />
+          <img src="./img/cover/cover3.png" class="cover3" />
+        </div>
+      </div> -->
+    </main>
 
     <script src="js/main.js" type="module"></script>
   </body>

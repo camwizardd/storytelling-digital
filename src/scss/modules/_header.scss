@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 128px;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+}
+
+.header-button {
+  padding: 10px 15px 15px 15px;
+  border: 1px solid #fb3589;
+  color: #fb3589;
+  font-size: 24px;
+  background-color: transparent;
+}

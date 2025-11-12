@@ -1,0 +1,34 @@
+.second-scene {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 300px;
+  .second-text {
+    font-size: 32px;
+    z-index: 200;
+  }
+}
+
+.second-parallax-item {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  img {
+    position: absolute;
+    bottom: 0;
+  }
+  .second-bg {
+    width: 100%;
+  }
+  .second-family {
+    width: 800px;
+    bottom: 30%;
+    left: 10%;
+  }
+  .second-bubble {
+    width: 370px;
+    top: 10%;
+    right: 30%;
+  }
+}
