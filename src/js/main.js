@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "<"
     );
 
+    //---------------------------------------------------------------------------------------------------//
+
     //SECOND PART (FAMILY 1 WALKING)
 
     var timelineSecond = gsap.timeline({
@@ -98,23 +100,44 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 5,
     });
 
+    timelineSecondImg.to(
+      ".second-bubble",
+      {
+        x: "80%",
+        duration: 5,
+      },
+      "<"
+    );
+
+    //---------------------------------------------------------------------------------------------------//
+
     //TRIHRD PART (FAMILY 2 WALKING)
 
-    var timelineThird = gsap.timeline({
+    var timelineThirdBg = gsap.timeline({
       scrollTrigger: {
         trigger: ".third-scene-container",
         markers: true,
-        id: "second",
         start: "top top",
-        end: "bottom top",
+        end: "bottom bottom",
         pin: true,
         scrub: true,
       },
     });
 
-    timelineThird.to("body", {
+    timelineThirdBg.to("body", {
       background: "#000000",
       duration: 5,
+    });
+
+    var timelineThirdImg = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".third-scene-container",
+        markers: true,
+        start: "top top",
+        end: "50% bottom",
+        pin: true,
+        scrub: true,
+      },
     });
 
     //FOURTH PART
