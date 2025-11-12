@@ -3,8 +3,10 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  gap: 300px;
+  gap: 100vh;
   .second-text {
+    opacity: 0;
+    padding: 0px 50px;
     font-size: 32px;
     z-index: 200;
   }

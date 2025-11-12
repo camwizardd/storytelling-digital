@@ -1,0 +1,28 @@
+.fifth-bubble-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 100vh;
+  width: 100%;
+  height: 100vh;
+  img {
+    width: 30%;
+  }
+  .fifth-bubble-daughter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .fifth-bubble-leave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.fifth-scene-container {
+  padding-top: 120vh;
+  width: 100%;
+}

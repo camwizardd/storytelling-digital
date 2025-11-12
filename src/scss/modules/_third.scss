@@ -5,11 +5,12 @@
   img {
     position: absolute;
     bottom: 0;
+    width: 100%;
   }
 }
 
 .third-scene-container {
-  padding-top: 800px;
+  padding-top: 120vh;
   display: flex;
   flex-direction: column;
   width: 100%;

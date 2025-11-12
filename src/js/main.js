@@ -7,8 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 //loading page
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
-    //loading-page
+    //LOADING PAGE
+
     document.querySelector(".loading-page").remove();
+
+    //INTRO
 
     var timelineIntro = gsap.timeline({
       scrollTrigger: {
@@ -53,33 +56,70 @@ document.addEventListener("DOMContentLoaded", function () {
       "<"
     );
 
-    // var timelineSecond = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".second-scene-container",
-    //     markers: true,
-    //     start: "top 50%",
-    //     end: "bottom bottom",
-    //     pin: true,
-    //     scrub: true,
-    //   },
-    // });
+    //SECOND PART (FAMILY 1 WALKING)
 
-    // timelineSecond.to(".second-text", {
-    //   opacity: 1,
-    //   duration: 2,
-    // });
-    // timelineSecond.to(".second-text", {
-    //   opacity: 1,
-    //   duration: 0.5,
-    // });
-    // timelineSecond.to(".second-text", {
-    //   opacity: 0,
-    //   duration: 1,
-    // });
-    // timelineSecond.to(".second-text", {
-    //   display: "none",
-    //   duration: 0,
-    // });
+    var timelineSecond = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".second-scene-container",
+        // markers: true,
+        start: "top 50%",
+        end: "bottom 50%",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineSecond.to(".second-text", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineSecond.to(".second-text", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineSecond.to(".second-text", {
+      opacity: 0,
+      duration: 1,
+    });
+
+    var timelineSecondImg = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".second-scene-container",
+        // markers: true,
+        start: "bottom bottom",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineSecondImg.to(".second-family", {
+      x: "70%",
+      duration: 5,
+    });
+
+    //TRIHRD PART (FAMILY 2 WALKING)
+
+    var timelineThird = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".third-scene-container",
+        markers: true,
+        id: "second",
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineThird.to("body", {
+      background: "#000000",
+      duration: 5,
+    });
+
+    //FOURTH PART
+
+    //FIFTH PART
   }, 1000);
 });
 
