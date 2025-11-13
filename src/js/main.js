@@ -109,6 +109,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "<"
     );
 
+    timelineSecondImg.to(".second-scene", {
+      opacity: 0,
+      delay: 2,
+      duration: 5,
+    });
+
     //---------------------------------------------------------------------------------------------------//
 
     //TRIHRD PART (FAMILY 2 WALKING)
@@ -116,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var timelineThirdBg = gsap.timeline({
       scrollTrigger: {
         trigger: ".third-scene-container",
-        markers: true,
+        // markers: true,
         start: "top top",
         end: "bottom bottom",
         pin: true,
@@ -126,24 +132,95 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineThirdBg.to("body", {
       background: "#000000",
-      duration: 5,
+      duration: 3,
     });
 
-    var timelineThirdImg = gsap.timeline({
+    // var timelineThirdImg = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".third-scene-container",
+    //     markers: true,
+    //     start: "top top",
+    //     end: "50% bottom",
+    //     pin: true,
+    //     scrub: true,
+    //   },
+    // });
+
+    //---------------------------------------------------------------------------------------------------//
+    //FOURTH PART
+
+    //---------------------------------------------------------------------------------------------------//
+
+    //FIFTH PART
+
+    //---------------------------------------------------------------------------------------------------//
+
+    //SIXTH PART (EMOTIONS PARALLAX)
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".sixth-parallax-emotions",
+          // markers: true,
+          id: "parallax",
+          start: "top bottom",
+          scrub: true,
+        },
+      })
+      .to(
+        ".sixth-parallax1",
+        {
+          y: "-1200",
+          duration: 5,
+        },
+        "<"
+      )
+      .to(
+        ".sixth-parallax2",
+        {
+          y: "-600",
+          duration: 5,
+        },
+        "<"
+      )
+      .to(
+        ".sixth-parallax3",
+        {
+          y: "-100",
+          duration: 5,
+        },
+        "<"
+      );
+
+    //---------------------------------------------------------------------------------------------------//
+
+    //SEVENTH PART
+
+    var timelineSeventh = gsap.timeline({
       scrollTrigger: {
-        trigger: ".third-scene-container",
-        markers: true,
-        start: "top top",
-        end: "50% bottom",
+        trigger: ".seventh-scene-img",
+        // markers: true,
+        start: "bottom bottom",
+        end: "1000%",
         pin: true,
         scrub: true,
       },
     });
 
-    //FOURTH PART
+    timelineSeventh.to("img", {
+      opacity: 1,
+      duration: 9,
+    });
+    timelineSeventh.to("img", {
+      x: "-1300px",
+      delay: 9,
+      duration: 20,
+    });
 
-    //FIFTH PART
-  }, 1000);
+    timelineSeventh.to("body", {
+      background: "#ffffff",
+      duration: 15,
+    });
+  });
 });
 
 // timelineSecond.to(".hero-cave", {

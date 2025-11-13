@@ -14,6 +14,13 @@
 }
 
 .fourth-scene-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 120vh;
   width: 100%;
+  .fourth-text {
+    font-size: 32px;
+    z-index: 200;
+  }
 }
