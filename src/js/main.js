@@ -89,22 +89,22 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: ".second-scene-container",
         // markers: true,
         start: "bottom bottom",
-        end: "bottom top",
+        end: "300%",
         pin: true,
         scrub: true,
       },
     });
 
     timelineSecondImg.to(".second-family", {
-      x: "70%",
-      duration: 5,
+      x: "50%",
+      duration: 3,
     });
 
     timelineSecondImg.to(
       ".second-bubble",
       {
-        x: "80%",
-        duration: 5,
+        x: "70%",
+        duration: 2,
       },
       "<"
     );
@@ -112,26 +112,47 @@ document.addEventListener("DOMContentLoaded", function () {
     timelineSecondImg.to(".second-scene", {
       opacity: 0,
       delay: 2,
-      duration: 5,
+      duration: 1,
     });
 
     //---------------------------------------------------------------------------------------------------//
 
     //TRIHRD PART (FAMILY 2 WALKING)
 
-    var timelineThirdBg = gsap.timeline({
+    var timelineThird = gsap.timeline({
       scrollTrigger: {
         trigger: ".third-scene-container",
         // markers: true,
-        start: "top top",
-        end: "bottom bottom",
+        start: "bottom bottom",
+        end: "300%",
         pin: true,
         scrub: true,
       },
     });
 
-    timelineThirdBg.to("body", {
+    timelineThird.to(".third-parallax-family", {
+      x: "-20%",
+      duration: 3,
+    });
+
+    timelineThird.to(
+      ".third-parallax-dad",
+      {
+        x: "10%",
+        duration: 2,
+      },
+      "<"
+    );
+
+    timelineThird.to(".third-scene-container", {
+      opacity: 0,
+      delay: 2,
+      duration: 1,
+    });
+
+    timelineThird.to("body", {
       background: "#000000",
+      delay: 2,
       duration: 3,
     });
 
@@ -148,6 +169,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //---------------------------------------------------------------------------------------------------//
     //FOURTH PART
+
+    var timelineFourth = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fourth-scene-container",
+        // markers: true,
+        start: "top 50%",
+        end: "bottom 50%",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineSecond.to(".second-text", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineSecond.to(".second-text", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineSecond.to(".second-text", {
+      opacity: 0,
+      duration: 1,
+    });
 
     //---------------------------------------------------------------------------------------------------//
 
