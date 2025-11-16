@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-// import VanillaTilt from "vanilla-tilt";
+import VanillaTilt from "vanilla-tilt";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -181,18 +181,70 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
-    timelineSecond.to(".second-text", {
+    timelineFourth.to(".fourth-text", {
       opacity: 1,
       duration: 2,
     });
-    timelineSecond.to(".second-text", {
+    timelineFourth.to(".fourth-text", {
       opacity: 1,
       duration: 2,
     });
-    timelineSecond.to(".second-text", {
+    timelineFourth.to(".fourth-text", {
       opacity: 0,
       duration: 1,
     });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".fourth-scene-container",
+          markers: true,
+          id: "parallax",
+          start: "top bottom",
+          end: "200%",
+          scrub: true,
+        },
+      })
+      .to(
+        ".fourth-parallax1",
+        {
+          y: "-100",
+          duration: 5,
+        },
+        "<"
+      )
+      .to(
+        ".fourth-parallax2",
+        {
+          y: "1",
+          duration: 5,
+        },
+        "<"
+      )
+      .to(
+        ".fourth-parallax3",
+        {
+          y: "-400",
+          duration: 5,
+        },
+        "<"
+      )
+      .to(
+        ".fourth-parallax4",
+        {
+          y: "-300",
+          duration: 5,
+        },
+        "<"
+      );
+
+    // VanillaTilt.init(document.querySelector(".fourth-parallax-item"), {
+    //   reverse: true,
+    //   max: 10,
+    //   speed: 800,
+    //   glare: false,
+    //   perspective: 1000,
+    // });
 
     //---------------------------------------------------------------------------------------------------//
 
