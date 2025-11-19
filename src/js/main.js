@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //---------------------------------------------------------------------------------------------------//
-// //TILT COVER
+// PURCHASE PART
 
 // const tiltElements = document.querySelectorAll(".image");
 
