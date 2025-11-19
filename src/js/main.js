@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineSeventh.to("body", {
       background: "#ffffff",
-      duration: 15,
+      duration: 10,
     });
 
     //---------------------------------------------------------------------------------------------------//
@@ -339,17 +339,48 @@ document.addEventListener("DOMContentLoaded", function () {
     var timelineEighth = gsap.timeline({
       scrollTrigger: {
         trigger: ".eighth-scene-container",
-        markers: true,
+        // markers: true,
         start: "top bottom",
-        end: "top 30%",
+        end: "bottom top",
         scrub: true,
       },
     });
 
     timelineEighth.to(".eighth-scene-container", {
       opacity: 1,
+      duration: 6,
+    });
+    timelineEighth.to(".eighth-scene-container", {
+      opacity: 0,
+      duration: 2,
+    });
+
+    //---------------------------------------------------------------------------------------------------//
+    //NINTH PART
+
+    var timelineNinth = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".ninth-scene-img",
+        markers: true,
+        start: "top top",
+        end: "400%",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineNinth.to(".ninth-castle", {
+      x: 85,
       duration: 5,
     });
+    timelineNinth.to(
+      ".ninth-girl",
+      {
+        x: -55,
+        duration: 5,
+      },
+      "<"
+    );
   });
 });
 

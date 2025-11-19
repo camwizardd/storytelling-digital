@@ -1,0 +1,25 @@
+.ninth-scene-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding-top: 100vh;
+}
+
+.ninth-scene-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 25vh;
+  padding-bottom: 400vh;
+  img {
+    width: 70vw;
+    position: absolute;
+  }
+  img:nth-child(1) {
+    left: -35vw;
+  }
+  img:nth-child(2) {
+    right: -45vw;
+  }
+}
