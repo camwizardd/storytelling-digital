@@ -21,4 +21,14 @@ body {
 
 a {
   font-size: 16px;
+  text-decoration-thickness: 0.8px;
+  text-underline-offset: 3.5px;
+}
+
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  will-change: transform;
 }

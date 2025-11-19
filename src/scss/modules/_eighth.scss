@@ -1,0 +1,54 @@
+// .eighth-scene-img {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   img {
+//     width: 60vw;
+//     filter: blur(11px);
+//   }
+// }
+
+.eighth-scene-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   perspective: 1400px;
+  opacity: 0;
+}
+
+.eighth-scene-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   transform-style: preserve-3d;
+}
+
+.eighth-scene-img img {
+  width: 60vw;
+  display: block;
+}
+
+.eighth-img-blurred {
+  filter: blur(17px);
+}
+
+.eighth-img-sharp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  /* Masque invisible par défaut */
+  -webkit-mask-image: radial-gradient(
+    circle 0px at 0 0,
+    transparent 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 0px at 0 0,
+    transparent 0%,
+    transparent 100%
+  );
+}

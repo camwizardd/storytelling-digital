@@ -1,17 +1,32 @@
 import { gsap } from "gsap";
 import VanillaTilt from "vanilla-tilt";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+gsap.registerPlugin(ScrollSmoother);
 gsap.registerPlugin(ScrollTrigger);
 
 //loading page
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
+    //---------------------------------------------------------------------------------------------------//
     //LOADING PAGE
 
     document.querySelector(".loading-page").remove();
 
-    //INTRO
+    //---------------------------------------------------------------------------------------------------//
+    //SCROLL SMOOTH
+
+    const smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.5, // inertie (= plus c’est haut, plus c’est doux)
+      smoothTouch: 0.1, // éviter l'effet trop glissant sur mobile
+      effects: true,
+    });
+
+    //---------------------------------------------------------------------------------------------------//
+    //INTRO (HERO)
 
     var timelineIntro = gsap.timeline({
       scrollTrigger: {
@@ -57,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     //---------------------------------------------------------------------------------------------------//
-
     //SECOND PART (FAMILY 1 WALKING)
 
     var timelineSecond = gsap.timeline({
@@ -116,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     //---------------------------------------------------------------------------------------------------//
-
     //TRIHRD PART (FAMILY 2 WALKING)
 
     var timelineThird = gsap.timeline({
@@ -156,17 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 3,
     });
 
-    // var timelineThirdImg = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".third-scene-container",
-    //     markers: true,
-    //     start: "top top",
-    //     end: "50% bottom",
-    //     pin: true,
-    //     scrub: true,
-    //   },
-    // });
-
     //---------------------------------------------------------------------------------------------------//
     //FOURTH PART
 
@@ -198,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .timeline({
         scrollTrigger: {
           trigger: ".fourth-scene-container",
-          markers: true,
+          // markers: true,
           id: "parallax",
           start: "top bottom",
           end: "200%",
@@ -247,7 +249,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
 
     //---------------------------------------------------------------------------------------------------//
-
     //FIFTH PART
 
     //---------------------------------------------------------------------------------------------------//
@@ -289,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
     //---------------------------------------------------------------------------------------------------//
-
     //SEVENTH PART
 
     var timelineSeventh = gsap.timeline({
@@ -303,11 +303,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
-    timelineSeventh.to("img", {
+    timelineSeventh.to(".seventh-img", {
       opacity: 1,
       duration: 9,
     });
-    timelineSeventh.to("img", {
+    timelineSeventh.to(".seventh-img", {
       x: "-1300px",
       delay: 9,
       duration: 20,
@@ -317,47 +317,45 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "#ffffff",
       duration: 15,
     });
+
+    //---------------------------------------------------------------------------------------------------//
+    //EIGHTH PART
+
+    const sharpImg = document.querySelector(".eighth-img-sharp");
+
+    document.addEventListener("mousemove", (e) => {
+      const rect = sharpImg.getBoundingClientRect();
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const radius = rect.width * 0.2; // ~8% de la largeur (responsive)
+
+      sharpImg.style.maskImage = `radial-gradient(circle ${radius}px at ${x}px ${y}px, white 0%, transparent 100%)`;
+
+      sharpImg.style.webkitMaskImage = sharpImg.style.maskImage;
+    });
+
+    var timelineEighth = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".eighth-scene-container",
+        markers: true,
+        start: "top bottom",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
+
+    timelineEighth.to(".eighth-scene-container", {
+      opacity: 1,
+      duration: 5,
+    });
   });
 });
 
-// timelineSecond.to(".hero-cave", {
-//   scale: 4.5,
-//   ease: "power2.out",
-//   duration: 2,
-// });
-// timelineSecond.to(".hero-cave", {
-//   display: "none",
-//   duration: 0,
-// });
-// timelineSecond.to(".hero-bg", {
-//   y: "50%",
-//   duration: 2,
-// });
-// timelineSecond.to(".hero-bg", {
-//   y: "50%",
-//   duration: 1,
-// });
-// timelineSecond.to(".hero-bg", {
-//   y: "100%",
-//   display: "none",
-//   duration: 1,
-// });
-// timelineSecond.to(
-//   ".hero-logo",
-//   {
-//     y: "-150%",
-//     display: "none",
-//     duration: 1,
-//   },
-//   "<"
-// );
-
-// timelineIntro.to(".cover", {
-//   opacity: 1,
-//   duration: 1,
-// });
-
+//---------------------------------------------------------------------------------------------------//
 // //TILT COVER
+
 // const tiltElements = document.querySelectorAll(".image");
 
 // VanillaTilt.init(tiltElements, {
