@@ -32,6 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     //---------------------------------------------------------------------------------------------------//
+    //CURSEUR
+
+    var cursor = document.querySelector(".cursor");
+
+    var onMouseMove = function () {
+      cursor.style.top = event.y + "px";
+      cursor.style.left = event.x + "px";
+    };
+
+    document.addEventListener("mousemove", onMouseMove);
+
+    //---------------------------------------------------------------------------------------------------//
     //INTRO (HERO)
 
     var timelineIntro = gsap.timeline({
@@ -246,20 +258,52 @@ document.addEventListener("DOMContentLoaded", function () {
         "<"
       );
 
-    // VanillaTilt.init(document.querySelector(".fourth-parallax-item"), {
-    //   reverse: true,
-    //   max: 10,
-    //   speed: 800,
-    //   glare: false,
-    //   perspective: 1000,
-    // });
-
     //---------------------------------------------------------------------------------------------------//
     //FIFTH PART
 
-    //---------------------------------------------------------------------------------------------------//
+    var timelineFifth = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fifth-scene-container",
+        // markers: true,
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+      },
+    });
 
+    timelineFifth.to(".fifth-text", {
+      opacity: 1,
+      duration: 5,
+    });
+    timelineFifth.to(".fifth-text", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineFifth.to(".fifth-text", {
+      opacity: 0,
+      duration: 1,
+    });
+
+    var timelineFifthBubble = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fifth-bubble-item",
+        markers: true,
+        start: "top top",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineFifthBubble.to(".fifth-bubble-weird", {
+      opacity: 1,
+      duration: 5,
+    });
+
+    //---------------------------------------------------------------------------------------------------//
     //SIXTH PART (EMOTIONS PARALLAX)
+
     gsap
       .timeline({
         scrollTrigger: {
