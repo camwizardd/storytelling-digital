@@ -1,0 +1,77 @@
+.purchase-wrapper {
+  padding: 0 56px;
+  height: 100vh;
+}
+
+.purchase-container {
+  position: relative;
+  height: 100vh;
+}
+
+.purchase-title {
+  height: 90vh;
+  position: absolute;
+  z-index: -1;
+  bottom: -5px;
+}
+
+.purchase-infos {
+  display: flex;
+  width: 46%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  padding-left: 400px;
+  padding-top: 530px;
+}
+
+.purchase-album-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 200;
+  right: 0;
+  bottom: 0;
+}
+
+.purchase-album {
+  position: relative;
+  flex-direction: column;
+  width: 450px;
+  height: 62vh;
+
+  img {
+    will-change: transform;
+    transform-style: preserve-3d;
+    position: absolute;
+  }
+  .purchase-album-cover1 {
+    width: 450px;
+    transform: translateZ(10px);
+  }
+  .purchase-album-cover2 {
+    width: 450px;
+    transform: translateZ(20px);
+    z-index: 2;
+  }
+  .purchase-album-cover3 {
+    width: 450px;
+    transform: translateZ(30px);
+    z-index: 3;
+  }
+}
+
+button {
+  display: flex;
+  padding: 27px 20px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  align-self: stretch;
+  color: #fff;
+  font-family: "Switzer Variable";
+  font-size: 24px;
+  border: 2px solid #fb3589;
+  background: #fb3589;
+}

@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineFourth.to(".fourth-text", {
       opacity: 1,
-      duration: 2,
+      duration: 5,
     });
     timelineFourth.to(".fourth-text", {
       opacity: 1,
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
       duration: 9,
     });
     timelineSeventh.to(".seventh-img", {
-      x: "-1300px",
+      x: "-100vw",
       delay: 9,
       duration: 20,
     });
@@ -361,9 +361,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var timelineNinth = gsap.timeline({
       scrollTrigger: {
         trigger: ".ninth-scene-img",
-        markers: true,
+        // markers: true,
         start: "top top",
-        end: "400%",
+        end: "bottom top",
         pin: true,
         scrub: true,
       },
@@ -381,6 +381,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "<"
     );
+    timelineNinth.to(".ninth-scene-container", {
+      opacity: 0,
+      delay: 2,
+      duration: 1,
+    });
   });
 });
 
