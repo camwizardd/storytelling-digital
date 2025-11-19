@@ -19,6 +19,33 @@ header {
   padding: 10px 15px 15px 15px;
   border: 1px solid #fb3589;
   color: #fb3589;
-  font-size: 24px;
   background-color: transparent;
+  display: flex;
+  gap: 0;
+  font-size: 24px;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.header-button-bg {
+  z-index: -1;
+  background-color: rgb(251, 53, 137);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s;
+}
+
+.header-button:hover {
+  color: #fff;
+  .header-button-bg {
+    width: 100%;
+  }
 }

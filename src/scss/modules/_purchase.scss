@@ -44,37 +44,62 @@
   width: 450px;
   height: 62vh;
 
-  img {
-    will-change: transform;
+  .album {
     transform-style: preserve-3d;
+    transform: perspective(10000px);
     position: absolute;
+    display: flex;
   }
   .purchase-album-cover1 {
     width: 450px;
     transform: translateZ(10px);
   }
   .purchase-album-cover2 {
+    position: fixed;
     width: 450px;
     transform: translateZ(20px);
     z-index: 2;
   }
   .purchase-album-cover3 {
+    position: fixed;
     width: 450px;
-    transform: translateZ(30px);
+    transform: translateZ(300px);
     z-index: 3;
   }
 }
 
-button {
+.purchase-cta {
   display: flex;
   padding: 27px 20px;
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
   align-self: stretch;
+  position: relative;
   color: #fff;
   font-family: "Switzer Variable";
   font-size: 24px;
   border: 2px solid #fb3589;
   background: #fb3589;
+  transform: translateY(90px);
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.purchase-cta-bg {
+  z-index: -1;
+  background-color: rgb(255, 255, 255);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s;
+}
+
+.purchase-cta:hover {
+  color: #fb3589;
+  .purchase-cta-bg {
+    width: 100%;
+  }
 }

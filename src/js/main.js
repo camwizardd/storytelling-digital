@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
       effects: true,
     });
 
+    const purchaseButton = document.querySelector(".header-button");
+
+    purchaseButton.addEventListener("click", () =>
+      smoother.scrollTo("#purchase-section", true, "top")
+    );
+
     //---------------------------------------------------------------------------------------------------//
     //INTRO (HERO)
 
@@ -386,18 +392,34 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 2,
       duration: 1,
     });
+
+    //---------------------------------------------------------------------------------------------------//
+    // PURCHASE PART
+
+    var timelinePurchase = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".purchase-wrapper",
+        // markers: true,
+        start: "bottom bottom",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelinePurchase.to(".purchase-cta", {
+      y: 1,
+      duration: 5,
+    });
+
+    const tiltElements = document.querySelectorAll(".purchase-album");
+
+    VanillaTilt.init(tiltElements, {
+      reverse: true,
+      max: 10,
+      speed: 800,
+      perspective: 1000,
+      glare: true,
+    });
   });
 });
-
-//---------------------------------------------------------------------------------------------------//
-// PURCHASE PART
-
-// const tiltElements = document.querySelectorAll(".image");
-
-// VanillaTilt.init(tiltElements, {
-//   reverse: true,
-//   max: 10,
-//   speed: 800,
-//   perspective: 1000,
-//   glare: false,
-// });
