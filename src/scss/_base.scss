@@ -6,6 +6,9 @@
 
 a {
   color: inherit;
+  font-size: 16px;
+  text-decoration-thickness: 0.8px;
+  text-underline-offset: 3.5px;
 }
 
 img,
@@ -23,16 +26,16 @@ body {
   // background-color: rgb(207, 255, 245);
 }
 
-a {
-  font-size: 16px;
-  text-decoration-thickness: 0.8px;
-  text-underline-offset: 3.5px;
-}
-
 #smooth-wrapper {
   overflow: hidden;
 }
 
 #smooth-content {
   will-change: transform;
+}
+
+::selection {
+  background-color: #fb3589;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }

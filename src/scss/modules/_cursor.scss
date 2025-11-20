@@ -19,7 +19,7 @@
 .cursor-border {
   position: absolute;
   align-items: center;
-  border: 1px solid #fb3589;
+  border: 1px solid #6edbd8;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -28,11 +28,9 @@
   left: 0;
   top: 0;
   transform: translate(-40%, -40%);
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 25px;
 }
 
 .cursor .text {
   font-family: "Switzer";
+  color: #6edbd8;
 }

@@ -81,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         y: "-200%",
         display: "none",
         duration: 1,
+        // onComplete: () => {
+        //   ScrollTrigger.refresh();
+        // },
       },
       "<"
     );
@@ -132,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timelineSecondImg.to(
       ".second-bubble",
       {
-        x: "70%",
+        x: "100%",
         duration: 2,
       },
       "<"
@@ -182,6 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
       background: "#000000",
       delay: 2,
       duration: 3,
+      // onComplete: () => {
+      //   ScrollTrigger.refresh();
+      // },
     });
 
     //---------------------------------------------------------------------------------------------------//
@@ -263,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: ".fifth-scene-container",
         // markers: true,
         start: "top top",
-        end: "100%",
+        end: "400%",
         pin: true,
         scrub: true,
       },
@@ -271,37 +277,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineFifth.to(".fifth-text", {
       opacity: 1,
-      duration: 1,
+      duration: 4,
     });
     timelineFifth.to(".fifth-text", {
       opacity: 0,
-      duration: 1,
+      duration: 4,
     });
 
-    var timelineFifthBubbleW = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".fifth-bubble-weird",
-        // markers: true,
-        start: "top top",
-        end: "200%",
-        pin: true,
-        scrub: true,
-      },
-    });
-
-    timelineFifthBubbleW.to(".fifth-bubble-weird", {
+    timelineFifth.to(".fifth-bubble-weird", {
       opacity: 1,
+      delay: 4,
+      duration: 4,
+    });
+    timelineFifth.to(".fifth-bubble-weird", {
+      opacity: 0,
       duration: 2,
     });
-    timelineFifthBubbleW.to(".fifth-bubble-weird", {
-      opacity: 0,
-      duration: 1,
+    timelineFifth.to(".fifth-bubble-daughter", {
+      opacity: 1,
+      delay: 4,
+      duration: 4,
     });
-
+    timelineFifth.to(".fifth-bubble-daughter", {
+      opacity: 0,
+      duration: 4,
+    });
+    timelineFifth.to(".fifth-bubble-leave", {
+      opacity: 1,
+      delay: 4,
+      duration: 4,
+    });
+    timelineFifth.to(".fifth-bubble-leave", {
+      opacity: 0,
+      duration: 4,
+    });
+    /*
     var timelineFifthBubbleD = gsap.timeline({
       scrollTrigger: {
         trigger: ".fifth-bubble-daughter",
-        // markers: true,
+        markers: true,
+        id: "daughter",
         start: "top top",
         end: "200%",
         pin: true,
@@ -309,19 +324,12 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
-    timelineFifthBubbleD.to(".fifth-bubble-daughter", {
-      opacity: 1,
-      duration: 2,
-    });
-    timelineFifthBubbleD.to(".fifth-bubble-daughter", {
-      opacity: 0,
-      duration: 1,
-    });
 
     var timelineFifthBubbleL = gsap.timeline({
       scrollTrigger: {
         trigger: ".fifth-bubble-leave",
-        // markers: true,
+        markers: true,
+        id: "leave",
         start: "top top",
         end: "200%",
         pin: true,
@@ -329,14 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
-    timelineFifthBubbleL.to(".fifth-bubble-leave", {
-      opacity: 1,
-      duration: 2,
-    });
-    timelineFifthBubbleL.to(".fifth-bubble-leave", {
-      opacity: 0,
-      duration: 1,
-    });
+    */
 
     //---------------------------------------------------------------------------------------------------//
     //SIXTH PART (EMOTIONS PARALLAX)
@@ -384,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: ".seventh-scene-img",
         // markers: true,
         start: "bottom bottom",
-        end: "1000%",
+        end: "400%",
         pin: true,
         scrub: true,
       },
@@ -397,6 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
     timelineSeventh.to(".seventh-img", {
       x: "-100vw",
       delay: 9,
+      ease: "power2.out",
       duration: 20,
     });
 
@@ -416,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const radius = rect.width * 0.2; // ~8% de la largeur (responsive)
+      const radius = rect.width * 0.2;
 
       sharpImg.style.maskImage = `radial-gradient(circle ${radius}px at ${x}px ${y}px, white 0%, transparent 100%)`;
 
@@ -427,8 +429,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollTrigger: {
         trigger: ".eighth-scene-container",
         // markers: true,
-        start: "top bottom",
-        end: "bottom top",
+        start: "top top",
+        end: "400%",
+        pin: true,
         scrub: true,
       },
     });
@@ -490,7 +493,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelinePurchase.to(".purchase-cta", {
       y: 1,
-      duration: 5,
+      ease: "power2.out",
+      duration: 2,
     });
 
     const tiltElements = document.querySelectorAll(".purchase-album");

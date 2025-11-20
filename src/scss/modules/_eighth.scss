@@ -1,19 +1,9 @@
-// .eighth-scene-img {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   img {
-//     width: 60vw;
-//     filter: blur(11px);
-//   }
-// }
-
 .eighth-scene-container {
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  //   perspective: 1400px;
   opacity: 0;
 }
 
@@ -22,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //   transform-style: preserve-3d;
 }
 
 .eighth-scene-img img {
