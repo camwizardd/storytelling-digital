@@ -68,10 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     timelineIntro.to(".hero-bg", {
       y: "50%",
-      duration: 2,
-    });
-    timelineIntro.to(".hero-bg", {
-      y: "50%",
       duration: 1,
     });
     timelineIntro.to(".hero-bg", {
@@ -129,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineSecondImg.to(".second-family", {
       x: "50%",
+      ease: "power2.out",
       duration: 3,
     });
 
@@ -143,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineSecondImg.to(".second-scene", {
       opacity: 0,
-      delay: 2,
+      delay: 1,
       duration: 1,
     });
 
@@ -177,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineThird.to(".third-scene-container", {
       opacity: 0,
-      delay: 2,
+      delay: 1,
       duration: 1,
     });
 
@@ -203,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineFourth.to(".fourth-text", {
       opacity: 1,
-      duration: 5,
+      duration: 1,
     });
     timelineFourth.to(".fourth-text", {
       opacity: 1,
@@ -266,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: ".fifth-scene-container",
         // markers: true,
         start: "top top",
-        end: "bottom top",
+        end: "100%",
         pin: true,
         scrub: true,
       },
@@ -274,31 +271,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
     timelineFifth.to(".fifth-text", {
       opacity: 1,
-      duration: 5,
-    });
-    timelineFifth.to(".fifth-text", {
-      opacity: 1,
-      duration: 2,
+      duration: 1,
     });
     timelineFifth.to(".fifth-text", {
       opacity: 0,
       duration: 1,
     });
 
-    var timelineFifthBubble = gsap.timeline({
+    var timelineFifthBubbleW = gsap.timeline({
       scrollTrigger: {
-        trigger: ".fifth-bubble-item",
-        markers: true,
+        trigger: ".fifth-bubble-weird",
+        // markers: true,
         start: "top top",
-        end: "bottom top",
+        end: "200%",
         pin: true,
         scrub: true,
       },
     });
 
-    timelineFifthBubble.to(".fifth-bubble-weird", {
+    timelineFifthBubbleW.to(".fifth-bubble-weird", {
       opacity: 1,
-      duration: 5,
+      duration: 2,
+    });
+    timelineFifthBubbleW.to(".fifth-bubble-weird", {
+      opacity: 0,
+      duration: 1,
+    });
+
+    var timelineFifthBubbleD = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fifth-bubble-daughter",
+        // markers: true,
+        start: "top top",
+        end: "200%",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineFifthBubbleD.to(".fifth-bubble-daughter", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineFifthBubbleD.to(".fifth-bubble-daughter", {
+      opacity: 0,
+      duration: 1,
+    });
+
+    var timelineFifthBubbleL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".fifth-bubble-leave",
+        // markers: true,
+        start: "top top",
+        end: "200%",
+        pin: true,
+        scrub: true,
+      },
+    });
+
+    timelineFifthBubbleL.to(".fifth-bubble-leave", {
+      opacity: 1,
+      duration: 2,
+    });
+    timelineFifthBubbleL.to(".fifth-bubble-leave", {
+      opacity: 0,
+      duration: 1,
     });
 
     //---------------------------------------------------------------------------------------------------//
